@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="th">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <title>AVALON</title><!-- TITLE OF WEB-->
+    </head>
+    <body>
+      
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+        <div id="mySidenav" class="sidenav navbarText" style="width: 0;">
+          <a  class="nav-link" href="werewolf.html">WEREWOLF</a> <!--อย่าลืมใส่ ACtive ให้เว็บตัวเอง--> 
+          <a class="nav-link" href="guesswho.html">GUESS WHO?</a>
+          <a class="nav-link" href="spyfall.html">SPYFALL</a>
+          <a class="nav-link" href="uno.html">UNO</a>
+          <a class="nav-link ACtive" href="avalon.html">AVALON</a>
+          <a class="nav-link" href="monopoly.html">MONOPOLY</a>
+          </div>
+        <!-----------------------NAV------------------------>
+        <nav class="navbar navbar-expand-sm navbar-light fixed-top" id="navi">
+            <div class="container-fluid">
+              <a class="navbar-brand" >AVALON</a>
+            </div>
+            
+            <div class="collapse navbar-collapse navbarText">
+                
+                <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a href="index.html" id="home" class="nav-link"><i class="fa fa-home fa-fw" style="font-size:25px;"></i></a>
+                  </li>
+                </ul>
+                <div class="container" onclick="myFunction(this),openNav(true)" id="menu_container">
+                    <div class="bar1"></div>
+                    <div class="bar2"></div>
+                    <div class="bar3"></div>
+                  </div>
+              </div>
+          </nav>
+        
+        <div id="main">
+          <div id="myCanvasNav" class="overlay3" style="width: 0; opacity: 0;"></div>
+          <!-----------------------IMG------------------------>
+          <div class="jumbotron">
+              <img src="IMAGE/mainavalon.jpg" width="100%"><!--To FIX BANNER------------------------------------------------>
+          </div>
+
+          <!-----------------------ALLGAMES------------------------>
+          <div id="avalon">
+              <h2>AVALON</h2>
+          </div>
+          <!-----------------------CONTENT------------------------>
+          <div id="mainavalon">
+            <div><h2><p align=center>ตัวละครพิเศษ</p></h2></div>
+            
+            <div class="d-flex p-3" style="margin-left: 20%;">
+              <img src="IMAGE/avalongood.jpg" class="img-thumbnail" width="300px" height="300px">
+              <div class="pd-5" style="margin-left: 20%;">
+                <img src="IMAGE/avalonbad.jpg" class="img-thumbnail" width="300px" height="300px">
+              </div>
+            </div>
+
+            <table class="table table-bordered table-striped table-hover"> 
+              <thead> 
+                  <tr>  
+                  <th>ฝั่งสีน้ำเงิน หรือ ฝ่ายอาเธอร์(ฝ่ายดี)</th> 
+                  <th>ฝ่ายสีแดง หรือ ฝ่ายมอร์เดร็ด(ฝ่ายร้าย)</th> 
+                  </tr> 
+              </thead> 
+           <tbody> 
+              <tr><td>Merlin ผู้มีความสามารถในการหยั่งรู้ว่าใครบ้างที่อยู่ฝ่ายร้าย</td><td>Assassin ผู้มีความสามารถในการเลือกสังหาร 1 ในผู้เล่นของฝ่ายดีในตอนจบเกม (กรณีที่ฝ่ายอัศวินชนะ) หากผู้ที่ถูกสังหารเป็น Merlin ฝ่ายร้ายจะเป็นฝ่ายชนะแทน</td></tr> 
+              <tr><td>Percival ผู้มีความสามารถในการรู้ตัว Merlin ทำหน้าที่คอยปกป้องไม่ให้ Merlin ถูกจับได้และถูกสังหาร</td><td>Mordred ผู้มีความสามารถในการปิดบังตัวตนของตนเอง Merlin จะไม่สามารถรู้ได้ว่าตัวละครนี้อยู่ฝ่ายร้าย</td></tr> 
+              <tr><td></td><td>Morgana ผู้มีความสามารถในการสวมรอยเป็น Merlin ทำให้ Percival ไม่สามารถแยกได้ว่าใครคือ Merlin ตัวจริง</td></tr>
+              <tr><td></td><td>Oberon ผู้มีความสามารถในการไม่เปิดเผยตัวตน ฝ่ายร้ายคนอื่นจะไม่รู้ว่าตัวละครนี้อยู่ฝ่ายร้ายด้วยกัน กลับกัน Oberon เองก็จะไม่รู้เช่นกันว่ามีใครบ้างที่อยู่ฝ่ายร้าย</td></tr> 
+           </tbody> 
+           </table>
+
+            <div class="d-flex p-3">
+              <img src="IMAGE/Quest1.jpg" class="img-thumbnail" width="300px" height="300px">
+              <div class="pd-5" style="padding-left: 50px;">
+                <h3><p>อุปกรณ์ในการเล่น</p></h3>
+                <h5><p>- การ์ดตัวละคร ซึ่งแบ่งเป็นฝั่งสีน้ำเงินหรือฝ่ายอาเธอร์ (ฝ่ายดี) และฝ่ายสีแดงหรือฝ่ายมอร์เดร็ด (ฝ่ายร้าย)
+                  กระดานภารกิจ
+                  <p>- <ins>Leader Token</ins> ใช้สำหรับส่งคนไปทำภารกิจ</p>
+                  <p>- <ins>Approve Reject Tokens</ins> ใช้สำหรับโหวตว่าต้องการให้คนที่ถูกเลือกออกไปทำภารกิจหรือไม่</p>
+                  <p>- <ins>Victory Token</ins> สำหรับวางลงบนกระดานภารกิจ</p>
+                  <p>- <ins>การ์ด Success และ Fail</ins> เป็นการ์ดที่จะแสดงว่าภารกิจสำเร็จ หรือไม่สำเร็จ</p></p></h5>
+              </div>
+            </div>
+
+            <div class="d-flex p-3">
+              <div class="pd-5" style="padding-left: 50px;">
+                <h3><p>วิธีการเล่นเกม</p></h3>
+                <h5><p>- อันดับแรก คุณต้องทำการแบ่งฝั่งก่อน โดยแบ่งเป็นฝั่งสีแดง และสีน้ำเงิน โดยผู้เล่น<ins>ขั้นต่ำ</ins>คือ 5 คน จากนั้นทำการนำการ์ดตัวละครทั้งสองฝั่งมาร่วมกันและให้ผู้เล่นเลือกการ์ดตัวละครไป โดยฝั่งสีน้ำเงินต้องมีมากกว่าฝั่งสีแดง ที่สำคัญ ในฝั่งสีน้ำเงินต้องมีการ์ดตัวละคร <ins>Merlin</ins> อยู่ด้วย ในขณะที่ ฝั่งสีแดงต้องมีการ์ด <ins>Assassin</ins> ด้วย ซึ่งการ์ดทั้ง 2 ใบต่างมีบทบาทสำคัญต่อทั้ง 2 ฝ่าย
+                  <p>- จากนั้นเมื่อผู้เล่นจำตัวละครที่ตนเองได้รับบทบาทแล้ว จะมีกรรมการ โดยกรรมการจะสั่งให้ทุกคนหลับตา หลังจากนั้นจะบอกว่าให้ทีมสีแดงลืมตาเพื่อจะได้รู้ว่าใครอยู่ฝ่ายสีแดงบ้าง จากนั้นกรรมการจะให้ทีมสีแดงหลับตาอีกครั้ง และจะสั่งให้ <ins>Merlin</ins> ลืมตาขึ้น และสั่งให้ฝ่ายสีแดงทุกคนชูนิ้วโป้งขึ้นมา หน้าที่ของ <ins>Merlin</ins> คือสามารถรู้ได้ว่าใครเป็นคนร้าย แต่ไม่สามารถบอกออกมาได้ หน้าที่คือพยายามขัดขวางไม่ให้ทีมแดงออกมาทำภารกิจ ด้วยการพูดโน้มน้าวทีมน้ำเงิน แต่ระวังให้ดี ถ้า <ins>Merlin</ins> แสดงตัวมากเกิน <ins>Assassin</ins> อาจจับได้ และสังหาร <ins>Merlin</ins> ในตอนท้ายเกม ถ้า <ins>Merlin</ins> ตายทีมน้ำเงินจะแพ้ทันที</p>
+                  <p>- <ins>Approve Reject Tokens</ins> ใช้สำหรับโหวตว่าต้องการให้คนที่ถูกเลือกออกไปทำภารกิจหรือไม่</p>
+                  <p>- เมื่อจัดการเรื่องทีม และผู้เล่นทุกคนรู้ตำแหน่งของตัวเองเรียบร้อยแล้ว ก็จะให้ผู้เล่นคนที่ 1 ใช้ <ins>Leader Token</ins> ส่งคนไปทำภารกิจ โดยการที่จะส่งคนไปทำภารกิจนั้น ต้องดูบนกระดานภารกิจด้วยว่าสามารถส่งไปได้กี่คน</p>
+                </p></h5>
+              </div>
+              <img src="IMAGE/Quest2.jpg" class="img-thumbnail" width="300px" height="300px">
+            </div>
+            
+            <div class="d-flex p-3">
+              <img src="IMAGE/avalon1.jpg" class="img-thumbnail" width="300px" height="300px">
+              <div class="pd-5" style="padding-left: 50px;">
+                <h5><p>- หลังจากเลือกคนออกไปทำภารกิจเสร็จแล้วจะต้องโหวตว่าจะไปทำภารกิจได้มั้ยโดย ใช้ <ins>Approve Reject Tokens</ins> หาก <ins>Approve Reject Tokens</ins> มีสีขาวมากกว่า ผู่ที่ถูกเลือกถึงจะออกมาทำภารกิจได้
+                  <p>- จากนั้นเข้าสู่ช่วงทำภารกิจ จะให้ผู้เล่นที่เลือกคนทำภารกิจ มอบ <ins>การ์ด Success และ Fail</ins> แก่ผู้ที่ออกไปทำภารกิจ โดยผู้ที่ทำภารกิจ แน่นอนอยู่แล้วฝ่ายสีน้ำเงินทำให้ภารกิจสำเร็จอยู่แล้ว ในขณะที่ฝ่ายสีแดง จะสามารถตัดสินใจได้ว่า จะทำภารกิจให้สำเร็จ หรือล้มเหลว ซึ่งแน่นอนครับ นี่คือความสนุกนึงของเกมนี้ เพราะหากผู้ที่ถูกเลือกออกไปทำภารกิจเป็นฝ่ายสีแดง ผู้เล่นคนนั้นต้องตัดสินใจ และหาทางโน้มน้าวไม่ให้อีกฝ่ายจับได้ โดยที่เจ้าตัวจะเลือกทำภารกิจให้สำเร็จเพื่อปกปิดสถานะของตัวเอง หรือจะเลือกทำภารกิจให้ล้มเหลว เพื่อให้ฝ่ายสีแดงชนะได้เร็วขึ้น ก็ต้องตัดสินใจกันดีๆ โดยการเลือกทำภารกิจ หาก <ins>การ์ด Success</ins> มีมากกว่าถือว่าภารกิจสำเร็จ แต่ถ้าหากมี <ins>การ์ด Fail</ins> ออกมาเพียงแค่ใบเดียว ถือว่าภารกิจไม่สำเร็จ</p>
+                  <p>- หากทำภารกิจสำเร็จ ก็ให้วาง <ins>Victory Token</ins> บนกระดานภารกิจ แต่ถ้าหากไม่สำเร็จ ให้วางในช่องด้านล่างของกระดานแทน</p>
+                  </p></h5>
+              </div>
+            </div>
+
+            <div class="d-flex p-3">
+              <div class="pd-5" style="padding-left: 50px;">
+                <h3><p>กฎการแพ้ชนะ</p></h3>
+                <h5><p>- เกมนี้มีวิธีการจบเกมที่น่าสนใจมาก และไม่ยุ่งยากอะไร หากฝ่ายสีฟ้า ทำภารกิจได้ครบ 3 ภารกิจ หรือฝ่ายสีแดง สามารถทำภารกิจให้ล้มเหลวได้ 3 ภารกิจ เกมก็จะจบทันที หากฝ่ายสีแดงเป็นคนจบเกม ฝ่ายสีแดงจะชนะทันที
+                <p>- แต่ถ้าหากฝ่ายสีฟ้าเป็นคนจบเกม <ins>Assassin</ins> จากฝ่ายสีแดง สามารถเดาได้ว่า ผู้เล่นฝ่ายสีฟ้าคนไหนคือ <ins>Merlin</ins> ถ้าเดาถูก <ins>Merlin</ins> จะถูกสังหาร และฝ่ายสีแดงก็จะเป็นผู้ชนะ ดังนั้นคนที่เป็น <ins>Merlin</ins> ตลอดการเล่นเกมต้องพยายามอย่าแสดงพิรุทอะไรให้คนจับได้ และหากในระหว่างการเล่นเกม หากตอนส่งคนไปทำภารกิจ มีการ <ins>Reject</ins> ถึง 5 ครั้ง ฝ่ายสีแดงก็จะเป็นผู้ชนะเช่นกัน
+                </p>
+                </p></h5>
+              </div>
+              <img src="IMAGE/avalon2.jpg" class="img-thumbnail" width="300px" height="300px">
+            </div>
+            
+
+          </div>
+          <!------------------------FOOTER---------------------------->
+              
+          <footer class=" p-4 bg-dark text-white">
+            <h1>สมาชิก</h1>
+            <div>
+              <p>1.ชนม์นิภา คำนูณวัฒน์ 660710701</p>
+              <p>2.ธีมาพร เรืองศรี 660710761</p>
+              <p>3.ศรีโสภณ คุ้มผล 660710254</p>
+              <p>4.ฑิฆัมพร มีดี 660710243</p>
+              <p>5.พีรพัชร คล้ายสำเนียง 660710729</p>
+            </div>
+            
+          </footer>
+        </div>
+          
+            
+    </body>
+
+
+    <script>
+      x=true
+      function myFunction(x) {
+        x.classList.toggle("change");
+      }
+      function openNav() {
+        if(x==true){
+          document.getElementById("mySidenav").style.width = "250px";
+          document.getElementById("main").style.marginRight = "250px";
+          document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+          document.getElementById("myCanvasNav").style.opacity = "0.8"; 
+          document.getElementById("myCanvasNav").style.width = "100%"; 
+          x=false
+        }else{
+          document.getElementById("mySidenav").style.width = "0";
+          document.getElementById("main").style.marginRight= "0";
+          document.getElementById("myCanvasNav").style.opacity = "0"; 
+          document.getElementById("myCanvasNav").style.width = "0%"; 
+          document.body.style.backgroundColor = "white";
+          x=true
+        }
+          
+      }
+
+  
+      </script>
+</html>

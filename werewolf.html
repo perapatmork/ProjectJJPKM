@@ -1,0 +1,630 @@
+<!doctype html>
+<html lang="th">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="styles.css">
+        <link rel="icon" type="image/x-icon" href="IMAGE/icon.png">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <title>Werewolf</title><!-- TITLE OF WEB-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    </head>
+    <body>
+      
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+        <div id="mySidenav" class="sidenav navbarText" style="width: 0;">
+            <a  class="nav-link active" href="werewolf.html" style="background-color: #24628f;">WEREWOLF</a> <!--อย่าลืมใส่ ACtive ให้เว็บตัวเอง--> 
+            <a class="nav-link" href="guesswho.html">GUESS WHO?</a>
+            <a class="nav-link " href="spyfall.html">SPYFALL</a>
+            <a class="nav-link" href="uno.html">UNO</a>
+            <a class="nav-link" href="avalon.html">AVALON</a>
+            <a class="nav-link" href="monopoly.html">MONOPOLY</a>
+          </div>
+        <!-----------------------NAV------------------------>
+        <nav class="navbar navbar-expand-sm navbar-light fixed-top" id="navi">
+            <div class="container-fluid">
+              <a class="navbar-brand" >WEREWOLF</a>
+            </div>
+            
+            <div class="collapse navbar-collapse navbarText">
+                
+                <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a href="index.html" id="home" class="nav-link"><i class="fa fa-home fa-fw" style="font-size:25px;"></i></a>
+                  </li>
+                </ul>
+                <div class="container" onclick="myFunction(this),openNav(true)" id="menu_container">
+                    <div class="bar1"></div>
+                    <div class="bar2"></div>
+                    <div class="bar3"></div>
+                  </div>
+              </div>
+          </nav>
+        
+        <div id="main" >
+          <div id="myCanvasNav" class="overlay3" style="width: 0; opacity: 0;"></div>
+          <!-----------------------IMG------------------------>
+          <!-- <div class="jumbotron" id="ima">
+              <img src="IMAGE/mainwerewolf.jpg"  style="width:100%;"><!--To FIX BANNER------------------------------------------------>
+          <!--</div> -->
+          <video autoplay muted loop id="myVideo">
+            <source src="IMAGE/bgwolf_loop.mp4" type="video/mp4">
+            Your browser does not support HTML5 video.
+          </video>
+
+          <!-----------------------ALLGAMES------------------------>
+          <div id="werewolf">
+              <h1>WEREWOLF</h1>
+          </div>
+          <!-----------------------CONTENT------------------------>
+          <div id="mainwerewolf" >
+            <div class="container">
+              
+              <p>&nbsp; &nbsp;บอร์ดเกม Bluff ยอดนิยม เกมล่ามนุษย์หมาป่าที่ทุกคนจะมีบทบาทลับตั้งแต่เกมเริ่ม โดยในช่วงกลางคืนจะมีการเผยบทบาทแบบลับ ๆ มีภารกิจให้ชาวบ้านจับมนุษย์หมาป่า และในแต่ละตาจะมีการทายว่าใครเป็นหมาป่าหากทายถูกหมาป่าจะตายแต่ต้องจับให้ได้ครึ่งหนึ่งของจำนวนหมาป่าที่มีอยู่ชาวบ้านถึงจะเป็นฝ่ายชนะนั่นเอง</p>
+            </div>
+            
+
+            <div class="container sticky-top" style="padding-top: 50px;">
+              <a href="#rule" style="text-decoration: none;color: #ffffff;">
+                <div class="box" style="background-color: #83acefcf;border-radius: 3px;text-align: center;max-width: 200px;max-height: 80px;padding: 20px 40px;">
+                  <h2>กติกา</h2>
+                </div>
+              </a>
+              
+              
+            </div>
+            <div class="container" style="padding-top: 50px;">
+              <a href="#char" style="text-decoration: none;color: #ffffff;">
+                <div class="box " style="background-color: #83acefcf;border-radius: 3px;text-align: center;max-width: 200px;max-height: 80px;padding: 20px 40px;">
+                  <h2 >ตัวละคร</h2>
+                </div>
+              </a>  
+            </div>
+            
+            
+            <div id="rule" style="margin-top: 200px;margin-left: 80px ;text-decoration: none;color: white; background-color: #000000cf;border-radius: 3px;text-align: center;max-width: 200px;max-height: 80px;padding: 20px 40px;">
+              <h2 >กติกา</h2>
+            </div>
+            <div class="container" style="color: white;">
+              
+              <h4 style="padding-top: 50px;">เซ็ทอัพตัวละครและวิธีเล่นที่เป็นที่นิยมและเล่นง่าย</h4>
+              <p style="padding: 50px;  line-height: 50px;" >
+              1. ผู้ดำเนินเกม (Moderetor) 1 คน<br>
+              2. เทพพยากรณ์ (Seer) 1 คน<br>
+              3. บอดี้การ์ด (Bodyguard) 1 คน<br>
+              4. มนุษย์หมาป่า (Werewolf) 1 คน<br>
+              5. ชาวบ้าน (Villager) 1-3 คน<br>
+              จำนวน ฝ่ายหมาป่า และ ฝ่ายชาวบ้าน แบ่งได้ตามจำนวนคน เช่น6คนขึ้นไปอาจมีหมาป่า 2 คน
+              </p>
+              <h4 style="padding-top: 5px;">วิธีเล่น</h4>
+
+              <p  style="font-size: 22px;">คืนแรก</p>
+              <ul  style="padding: 50px;  line-height: 50px; margin-top: -100px; font-size: 20px;">
+                <p>
+                  <li>เมื่อเข้าสู่ช่วงกลางคืน ให้ทุกคนหลับตาลง</li>
+                  <li>ผู้ดำเนินเกมอนุญาตให้หมาป่าลืมตาขึ้นมามองหมาป่าด้วยกัน เมื่อจำกันได้แล้วให้หลับตาลง</li>
+                  <li>จากนั้นจึงเรียกบทบาทอื่น ๆ จนครบ (เพื่อให้ผู้ดำเนินเกมได้จดด้วยว่าใครรับบทบาทอะไรบ้าง) จากนั้นจึงเข้าสู่ช่วงกลางวันเพื่อพูดคุยกัน</li>
+                  <li>ในคืนแรกจะยังไม่มีการฆ่าและการเผาเกิดขึ้นเป็นเพียงแค่การได้รู้จักบทบาทของแต่ละคน</li>
+                </p>
+              </ul>
+
+              <p  style="font-size: 22px;margin-top: -120px;">คืนที่สอง</p>
+              <ul  style="padding: 50px;  line-height: 50px; margin-top: -100px; font-size: 20px;">
+                <p>
+                  <li>ทุกคนหลับตาลง</li>
+                  <li>ผู้ดำเนินเกม เรียกให้มนุษย์หมาป่าลืมตา มนุษย์หมาป่าเลือกว่าจะฆ่าใครในคืนนี้ เมื่อเลือกได้แล้วให้หลับตาลง</li>
+                  <li>ผู้ดำเนินเกม เรียกให้เทพพยากรณ์ลืมตา เทพพยากรณ์เลือกว่าจะส่องบทบาทของใคร โดยผู้ดำเนินเกมจะเป็นคนคอยบอกว่าถูกหรือผิด เสร็จแล้วจึงหลับตา</li>
+                  <li>ผู้ดำเนินเกม เรียกให้บอดี้การ์ดลืมตา บอดี้การ์ดเลือกว่าจะปกป้องใครในคืนนี้ เสร็จแล้วจึงหลับตา</li>
+                  <li>จากนั้นเกมจะเข้าสู่ช่วงเวลากลางวัน</li>
+                  
+
+                </p>
+              </ul>
+
+              <p  style="font-size: 22px;margin-top: -120px;">วันที่สอง</p>
+              <ul  style="padding: 50px;  line-height: 50px; margin-top: -100px; font-size: 20px;">
+                <p>
+                  <li>ทุกคนลืมตา</li>
+                  <li>ผู้ดำเนินเกม บอกว่าเมื่อคืนมีใครตาย ผู้ที่ตายแล้วไม่สามารถพูดได้</li>
+                  <li>พูดคุยเพื่อหาตัวคนร้าย</li>
+                  <li>เมื่อคุยกันแล้ว คนที่โดนสงสัยมากที่สุดจะโดนโหวตเผา หากเสียงโหวตมากกว่าครึ่งหนึ่งจะโดนเผาทันที</li>
+                </p>
+              </ul>
+              <p style="font-size: 22px;margin-top: -120px;">เกมจะดำเนินไปเรื่อยๆ และในแต่ละบทบาทจะถูกเรียกออกใช้งานตามผู้ที่เป็นบทบาทนั้น ชาวบ้านจะชนะโดยฆ่าหมาป่าทั้งหมดหรือหมาป่าจะชนะโดยฆ่าชาวบ้านให้เหลือเท่าจำนวนหมาป่า</p>
+            </div>
+          
+
+            <div id="char" style="margin-top: 200px;margin-left: 80px ;text-decoration: none;color: white; background-color: #000000cf;border-radius: 3px;text-align: center;max-width: 200px;max-height: 80px;padding: 20px 40px;">
+              <h2 >ตัวละคร</h2>
+            </div>
+            <div class="container" style="color: white;">
+              
+              <h4 style="padding-top: 50px;">บทบาททั้งหมดจะมีดังนี้</h4>
+              <p style="padding: 50px;  line-height: 50px;" >
+              1. ฝ่ายชาวบ้าน (Villagers) <br>
+              2. ฝ่ายหมาป่า (Werewolves)<br>
+              3. ตัวละครแถมพิเศษ (Additional) <br>
+              </p>
+            </div>
+
+            <div id="rule" style="font-size: 30px; margin-top: 20px;margin-left: 80px ;text-decoration: none;color: white; background-color: #000000cf;border-radius: 3px;text-align: center;max-width: 160px;max-height: 60px;padding: 20px 40px;">
+              <h4 >ชาวบ้าน</h4>
+            </div>
+
+            <div class=" container-fluid" id="rolecard">
+              <div class="card" style="width: 290px;height: 380px; border-radius: 5px; background-color: #24628f00;">
+                <img class="img-rounded" src="IMAGE/card_cupid.png" alt="cupid" height="100%" width="100%" style="border-radius: 10px;"> 
+                <div class="detail" style="background-color: #000000a7; ">
+                  <h1 style="margin-top: -55px; margin-left: 10px;">กามเทพ</h1>
+                  <p>ในคืนแรกเลือกผู้เล่นสองคนและเมื่อคนใดคนหนึ่งถูกกำจัด อีกคนจะถูกกำจัดไปด้วย</p>
+              
+                </div>
+              </div>
+              <!------------------------------------------------------------>
+              <div class="card" style="width: 290px;height: 380px; border-radius: 5px; background-color: #24628f00;">
+                <img class="img-rounded" src="IMAGE/card_drunken.png" alt="cupid" height="100%" width="100%" style="border-radius: 10px;"> 
+                <div class="detail" style="background-color: #000000a7; ">
+                  <h1 style="margin-top: -55px; margin-left: 10px;">ขี้เมา</h1>
+                  <p>เป็นชาวบ้านธรรมดาจนหลังคืนที่ 3 จะสร่างเมาและรู้ว่าตัวเองเป็นใคร</p>
+              
+                </div>
+              </div>
+              <!------------------------------------------------------------>
+              <div class="card" style="width: 290px;height: 380px; border-radius: 5px; background-color: #24628f00;">
+                <img class="img-rounded" src="IMAGE/card_spellcaster.png" alt="cupid" height="100%" width="100%" style="border-radius: 10px;"> 
+                <div class="detail" style="background-color: #000000a7; ">
+                  <h1 style="margin-top: -55px; margin-left: 10px;">จอมเวท</h1>
+                  <p>ในแต่ละคืนเลือกผู้เล่นที่จะถูกใบ้ในวันถัดไป</p>
+              
+                </div>
+              </div>
+              <!------------------------------------------------------------>
+              <div class="card" style="width: 290px;height: 380px; border-radius: 5px; background-color: #24628f00;">
+                <img class="img-rounded" src="IMAGE/card_princess.png" alt="cupid" height="100%" width="100%" style="border-radius: 10px;"> 
+                <div class="detail" style="background-color: #000000a7; ">
+                  <h1 style="margin-top: -55px; margin-left: 10px;">เจ้าชาย</h1>
+                  <p>เมื่อถูกกำจัดด้วยการโหวตในตอนกลางวัน ให้เผยบทบาทออกมา และจะไม่ถูกกำจัด</p>
+              
+                </div>
+              </div>
+              <!------------------------------------------------------------>
+
+              <div class="card" style="width: 290px;height: 380px; border-radius: 5px; background-color: #24628f00;">
+                <img class="img-rounded" src="IMAGE/card_villager.png" alt="cupid" height="100%" width="100%" style="border-radius: 10px;"> 
+                <div class="detail" style="background-color: #000000a7; ">
+                  <h1 style="margin-top: -55px; margin-left: 10px;">ชาวบ้าน</h1>
+                  <p>ไล่ล่ามนุษย์หมาป่าให้เจอและกำจัดทิ้ง</p>
+              
+                </div>
+              </div>
+              <!------------------------------------------------------------>
+
+              <div class="card" style="width: 290px;height: 380px; border-radius: 5px; background-color: #24628f00;">
+                <img class="img-rounded" src="IMAGE/card_vison.png" alt="cupid" height="100%" width="100%" style="border-radius: 10px;"> 
+                <div class="detail" style="background-color: #000000a7; ">
+                  <h1 style="margin-top: -55px; margin-left: 10px;">ญาณทิพย์</h1>
+                  <p>ในแต่ละคืน ตรวจสอบผู้เล่นหนึ่งคนว่าเป็นตัวละครพิเศษหรือไม่(ไม่ใช่หมาป่าหรือชาวบ้านธรรมดา)</p>
+              
+                </div>
+              </div>
+              <!------------------------------------------------------------>
+
+              <div class="card" style="width: 290px;height: 380px; border-radius: 5px; background-color: #24628f00;">
+                <img class="img-rounded" src="IMAGE/card_troublemaker.png" alt="cupid" height="100%" width="100%" style="border-radius: 10px;"> 
+                <div class="detail" style="background-color: #000000a7; ">
+                  <h1 style="margin-top: -55px; margin-left: 10px;">ตัวป่วน</h1>
+                  <p>ในตอนกลางคืน สามารถป่วนให้มีการโหวตกำจัดสองคนในวันรุ่งขึ้น ทำได้หนึ่งครึ่งต่อเกม</p>
+              
+                </div>
+              </div>
+              <!------------------------------------------------------------>
+
+              <div class="card" style="width: 290px;height: 380px; border-radius: 5px; background-color: #24628f00;">
+                <img class="img-rounded" src="IMAGE/card_god_seer.png" alt="cupid" height="100%" width="100%" style="border-radius: 10px;"> 
+                <div class="detail" style="background-color: #000000a7; ">
+                  <h1 style="margin-top: -55px; margin-left: 10px;">เทพพยากรณ์</h1>
+                  <p>ในแต่ละคืน เลือกตรวจสอบคนว่าเป็นมนุษย์หมาป่าหรือไม่</p>
+              
+                </div>
+              </div>
+              <!------------------------------------------------------------>
+
+              <div class="card" style="width: 290px;height: 380px; border-radius: 5px; background-color: #24628f00;">
+                <img class="img-rounded" src="IMAGE/card_priest.png" alt="cupid" height="100%" width="100%" style="border-radius: 10px;"> 
+                <div class="detail" style="background-color: #000000a7; ">
+                  <h1 style="margin-top: -55px; margin-left: 10px;">นักบวช</h1>
+                  <p>ในตอนกลางคืน เลือกผู้เล่นหนึ่งคน คนนั้นจะรอดจากการถูกกำจัด ได้หนึ่งคนต่อเกม</p>
+              
+                </div>
+              </div>
+              <!------------------------------------------------------------>
+
+              <div class="card" style="width: 290px;height: 380px; border-radius: 5px; background-color: #24628f00;">
+                <img class="img-rounded" src="IMAGE/card_mystories_seeker.png" alt="cupid" height="100%" width="100%" style="border-radius: 10px;"> 
+                <div class="detail" style="background-color: #000000a7; ">
+                  <h1 style="margin-top: -55px; margin-left: 10px;">นักสืบเรื่องลี้ลับ</h1>
+                  <p>ในตอนกลางคืน ให้ชี้ไปที่ผู้เล่นคนหนึ่งเพื่อดูว่าผู้เล่นซ้ายและขวาของผู้เล่นคนนั้นมีมนุษย์หมาป่าหรือไม่ ทำได้หนึ่งครั้งต่อเกม</p>
+              
+                </div>
+              </div>
+              <!------------------------------------------------------------>
+
+              <div class="card" style="width: 290px;height: 380px; border-radius: 5px; background-color: #24628f00;">
+                <img class="img-rounded" src="IMAGE/card_prime_minister.png" alt="cupid" height="100%" width="100%" style="border-radius: 10px;"> 
+                <div class="detail" style="background-color: #000000a7; ">
+                  <h1 style="margin-top: -55px; margin-left: 10px;">นายกรัฐมนตรี</h1>
+                  <p>เสียงโหวตมี 2 เสียง</p>
+              
+                </div>
+              </div>
+              <!------------------------------------------------------------>
+
+              <div class="card" style="width: 290px;height: 380px; border-radius: 5px; background-color: #24628f00;">
+                <img class="img-rounded" src="IMAGE/card_huntsman.png" alt="cupid" height="100%" width="100%" style="border-radius: 10px;"> 
+                <div class="detail" style="background-color: #000000a7; ">
+                  <h1 style="margin-top: -55px; margin-left: 10px;">นายพราน</h1>
+                  <p>ถ้าถูกกำจัด จะเลือกกำจัดอีกผู้เล่นได้ทันที</p>
+              
+                </div>
+              </div>
+              <!------------------------------------------------------------>
+
+              <div class="card" style="width: 290px;height: 380px; border-radius: 5px; background-color: #24628f00;">
+                <img class="img-rounded" src="IMAGE/card_bodyguard.png" alt="cupid" height="100%" width="100%" style="border-radius: 10px;"> 
+                <div class="detail" style="background-color: #000000a7; ">
+                  <h1 style="margin-top: -55px; margin-left: 10px;">บอดี้การ์ด</h1>
+                  <p>ในแต่ละคืนสามารถเลือกผู้เล่นหนึ่งคนให้ไม่ถูกกำจัดในคืนนั้นได้</p>
+              
+                </div>
+              </div>
+              <!------------------------------------------------------------>
+
+              <div class="card" style="width: 290px;height: 380px; border-radius: 5px; background-color: #24628f00;">
+                <img class="img-rounded" src="IMAGE/card_infectioner.png" alt="cupid" height="100%" width="100%" style="border-radius: 10px;"> 
+                <div class="detail" style="background-color: #000000a7; ">
+                  <h1 style="margin-top: -55px; margin-left: 10px;">ผู้ป่วยติดเชื้อ</h1>
+                  <p>หากถูกมนุษย์หมาป่ากำจัด มนุษย์หมาป่าจะไม่สามารถเลือกกำจัดผู้เล่นในคืนถัดไปได้</p>
+              
+                </div>
+              </div>
+              <!------------------------------------------------------------>
+
+              <div class="card" style="width: 290px;height: 380px; border-radius: 5px; background-color: #24628f00;">
+                <img class="img-rounded" src="IMAGE/card_peace_lover.png" alt="cupid" height="100%" width="100%" style="border-radius: 10px;"> 
+                <div class="detail" style="background-color: #000000a7; ">
+                  <h1 style="margin-top: -55px; margin-left: 10px;">ผู้รักสันติ</h1>
+                  <p>ต้องโหวตให้ผู้เล่นรอดเสมอ</p>
+              
+                </div>
+              </div>
+              <!------------------------------------------------------------>
+
+              <div class="card" style="width: 290px;height: 380px; border-radius: 5px; background-color: #24628f00;">
+                <img class="img-rounded" src="IMAGE/card_whisper.png" alt="cupid" height="100%" width="100%" style="border-radius: 10px;"> 
+                <div class="detail" style="background-color: #000000a7; ">
+                  <h1 style="margin-top: -55px; margin-left: 10px;">พรายกระซิบ</h1>
+                  <p>จะถูกกำจัดตั้งแต่คืนแรก ทำให้สื่อสารกับผู้เล่นที่เหลือด้วยการส่งสาร วันละหนึ่งตัวอักษร</p>
+              
+                </div>
+              </div>
+              <!------------------------------------------------------------>
+
+              <div class="card" style="width: 290px;height: 380px; border-radius: 5px; background-color: #24628f00;">
+                <img class="img-rounded" src="IMAGE/card_meson_hood.png" alt="cupid" height="100%" width="100%" style="border-radius: 10px;"> 
+                <div class="detail" style="background-color: #000000a7; ">
+                  <h1 style="margin-top: -55px; margin-left: 10px;">ภราดรแห่งเมสัน</h1>
+                  <p>ในคืนแรก ลืมตาขึ้นมาเพื่อหาภราดรแห่งเมสันด้วยกัน</p>
+              
+                </div>
+              </div>
+              <!------------------------------------------------------------>
+
+              <div class="card" style="width: 290px;height: 380px; border-radius: 5px; background-color: #24628f00;">
+                <img class="img-rounded" src="IMAGE/card_shape_shifter.png" alt="cupid" height="100%" width="100%" style="border-radius: 10px;"> 
+                <div class="detail" style="background-color: #000000a7; ">
+                  <h1 style="margin-top: -55px; margin-left: 10px;">ภูติจำแลง</h1>
+                  <p>ในคืนแรก เลือกผู้เล่นหนึ่งคน เมื่อผู้เล่นนั้นถูกกำจัด จะสวมรอยเป็นบทบาทคนนั้นทันที</p>
+              
+                </div>
+              </div>
+              <!------------------------------------------------------------>
+
+              <div class="card" style="width: 290px;height: 380px; border-radius: 5px; background-color: #24628f00;">
+                <img class="img-rounded" src="IMAGE/card_witch.png" alt="cupid" height="100%" width="100%" style="border-radius: 10px;"> 
+                <div class="detail" style="background-color: #000000a7; ">
+                  <h1 style="margin-top: -55px; margin-left: 10px;">แม่มด</h1>
+                  <p>ในช่วงกลางคืน สามารถใช้พลังเวทย์เพื่อปกป้องหรือกำจัดผู้เล่นได้อย่างละครั้งในหนึ่งเกม</p>
+              
+                </div>
+              </div>
+              <!------------------------------------------------------------>
+
+              <div class="card" style="width: 290px;height: 380px; border-radius: 5px; background-color: #24628f00;">
+                <img class="img-rounded" src="IMAGE/card_granddocter.png" alt="cupid" height="100%" width="100%" style="border-radius: 10px;"> 
+                <div class="detail" style="background-color: #000000a7; ">
+                  <h1 style="margin-top: -55px; margin-left: 10px;">แม่หมอ</h1>
+                  <p>ในแต่ละคืนเลือกสาปให้ผู้เล่นคนนั้นออกไปจากหมู่บ้านได้หนึ่งวัน</p>
+              
+                </div>
+              </div>
+              <!------------------------------------------------------------>
+
+              <div class="card" style="width: 290px;height: 380px; border-radius: 5px; background-color: #24628f00;">
+                <img class="img-rounded" src="IMAGE/card_half_wolf.png" alt="cupid" height="100%" width="100%" style="border-radius: 10px;"> 
+                <div class="detail" style="background-color: #000000a7; ">
+                  <h2 style="margin-top: -50px; margin-left: 10px;">ลูกครึ่งมนุษย์หมาป่า</h2>
+                  <p>อยู่ฝ่ายชาวบ้านแต่เทพพยากรณ์จะมองเป็นหมาป่า</p>
+              
+                </div>
+              </div>
+              <!------------------------------------------------------------>
+
+              <div class="card" style="width: 290px;height: 380px; border-radius: 5px; background-color: #24628f00;">
+                <img class="img-rounded" src="IMAGE/card_seer_junir.png" alt="cupid" height="100%" width="100%" style="border-radius: 10px;"> 
+                <div class="detail" style="background-color: #000000a7; ">
+                  <h2 style="margin-top: -50px; margin-left: 10px;">ศิษย์เทพพยากรณ์</h2>
+                  <p>หากเทพพยากรณ์ถูกกำจัด จะเป็นเทพยากณ์ และตรวจหาหมาป่าทุกคืน</p>
+              
+                </div>
+              </div>
+              <!------------------------------------------------------------>
+
+              <div class="card" style="width: 290px;height: 380px; border-radius: 5px; background-color: #24628f00;">
+                <img class="img-rounded" src="IMAGE/card_toughman.png" alt="cupid" height="100%" width="100%" style="border-radius: 10px;"> 
+                <div class="detail" style="background-color: #000000a7; ">
+                  <h1 style="margin-top: -55px; margin-left: 10px;">หนุ่มถึก</h1>
+                  <p>หากถูกกำจัดโดยหมาป่าจะยังรอดจนกว่าจะถึงคืนถัดไป</p>
+              
+                </div>
+              </div>
+              <!------------------------------------------------------------>
+
+              <div class="card" style="width: 290px;height: 380px; border-radius: 5px; background-color: #24628f00;">
+                <img class="img-rounded" src="IMAGE/card_stupidy.png" alt="cupid" height="100%" width="100%" style="border-radius: 10px;"> 
+                <div class="detail" style="background-color: #000000a7; ">
+                  <h1 style="margin-top: -55px; margin-left: 10px;">ไอ้ทึ่ม</h1>
+                  <p>ต้องโหวตให้ผู้เล่นถูกกำจัดเสมอ</p>
+              
+                </div>
+              </div>
+              <!------------------------------------------------------------>
+              
+              
+            </div>
+            <div id="rule" style="font-size: 30px; margin-top: 80px;margin-left: 80px ;text-decoration: none;color: white; background-color: #000000cf;border-radius: 3px;text-align: center;max-width: 220px;max-height: 80px;padding: 20px 40px;">
+              <h4 >มนุษย์หมาป่า</h4>
+            </div>
+
+            <div class=" container-fluid" id="rolecard">
+              <div class="card" style="width: 290px;height: 380px; border-radius: 5px; background-color: #24628f00;">
+                <img class="img-rounded" src="IMAGE/card_wolf.png" alt="cupid" height="100%" width="100%" style="border-radius: 10px;"> 
+                <div class="detail" style="background-color: #000000a7; ">
+                  <h1 style="margin-top: -55px; margin-left: 10px;">มนุษย์หมาป่า</h1>
+                  <p>ในทุก ๆ คืน ตื่นขึ้นมาพร้อมกับมนุษย์หมาป่าตัวอื่น ๆ
+                    และเลือกกําจัดผู้เล่นหนึ่งคน</p>
+              
+                </div>
+              </div>
+              <!------------------------------------------------------------>
+              <div class="card" style="width: 290px;height: 380px; border-radius: 5px; background-color: #24628f00;">
+                <img class="img-rounded" src="IMAGE/card_devilwoman.png" alt="cupid" height="100%" width="100%" style="border-radius: 10px;"> 
+                <div class="detail" style="background-color: #000000a7; ">
+                  <h1 style="margin-top: -55px; margin-left: 10px;">นางปีศาจ</h1>
+                  <p>ในแต่ละคืน เลือกตรวจสอบผู้เล่นหนึ่งคนว่าเป็น เทพพยากรณ์หรือไม่ คุณอยู่ฝ่ายมนุษย์หมาป่า</p>
+              
+                </div>
+              </div>
+              <!------------------------------------------------------------>
+              <div class="card" style="width: 290px;height: 380px; border-radius: 5px; background-color: #24628f00;">
+                <img class="img-rounded" src="IMAGE/card_minion.png" alt="cupid" height="100%" width="100%" style="border-radius: 10px;"> 
+                <div class="detail" style="background-color: #000000a7; ">
+                  <h1 style="margin-top: -55px; margin-left: 10px;">สมุนรับใช้</h1>
+                  <p>
+                    คุณจะรู้ว่าใครเป็นมนุษย์หมาป่าบ้าง แต่ไม่ได้ตื่นในเวลากลางคืน</p>
+              
+                </div>
+              </div>
+              <!------------------------------------------------------------>
+              <div class="card" style="width: 290px;height: 380px; border-radius: 5px; background-color: #24628f00;">
+                <img class="img-rounded" src="IMAGE/card_werewolfchild.png" alt="cupid" height="100%" width="100%" style="border-radius: 10px;"> 
+                <div class="detail" style="background-color: #000000a7; ">
+                  <h1 style="margin-top: -55px; margin-left: 10px;">ลุกมนุษย์หมาป่า</h1>
+                  <p>ในทุก ๆ คืน ตื่นขึ้นมาพร้อมกับมนุษย์หมาป่าตัวอื่น ๆ ถ้าคุณถูกกําจัด ฝ่ายมนุษย์หมาป่า จะได้กําจัดผู้เล่น 2 คนในคืนถัดไป</p>
+              
+                </div>
+              </div>
+              <!------------------------------------------------------------>
+
+              <div class="card" style="width: 290px;height: 380px; border-radius: 5px; background-color: #24628f00;">
+                <img class="img-rounded" src="IMAGE/card_alone_werewolf.png" alt="cupid" height="100%" width="100%" style="border-radius: 10px;"> 
+                <div class="detail" style="background-color: #000000a7; ">
+                  <h3 style="margin-top: -55px; margin-left: 10px;">มนุษย์หมาป่าเดียวดาย</h3>
+                  <p>ตื่นพร้อมกับมนุษย์หมาป่าตัวอื่น ๆ ทุกคืน แต่คุณจะชนะ เมื่อเหลือรอดอยู่ในเกมเป็นคนสุดท้ายเท่านั้น</p>
+              
+                </div>
+              </div>
+              <!------------------------------------------------------------>
+
+              <div class="card" style="width: 290px;height: 380px; border-radius: 5px; background-color: #24628f00;">
+                <img class="img-rounded" src="IMAGE/card_moderator.png" alt="cupid" height="100%" width="100%" style="border-radius: 10px;"> 
+                <div class="detail" style="background-color: #000000a7; ">
+                  <h1 style="margin-top: -55px; margin-left: 10px;">ผู้ดำเนินเกม</h1>
+                  <p>ผู้ดำเนินเกม</p>
+              
+                </div>
+              </div>
+              <!------------------------------------------------------------>
+
+              <div class="card" style="width: 290px;height: 380px; border-radius: 5px; background-color: #24628f00;">
+                <img class="img-rounded" src="IMAGE/card_poormen.png" alt="cupid" height="100%" width="100%" style="border-radius: 10px;"> 
+                <div class="detail" style="background-color: #000000a7; ">
+                  <h1 style="margin-top: -55px; margin-left: 10px;">ยาจก</h1>
+                  <p>คุณหมดอาลัยตายอยากกับชีวิต คุณจะชนะทันทีหากถูกกําจัด</p>
+              
+                </div>
+              </div>
+              <!------------------------------------------------------------>
+
+              <div class="card" style="width: 290px;height: 380px; border-radius: 5px; background-color: #24628f00;">
+                <img class="img-rounded" src="IMAGE/card_cursedman.png" alt="cupid" height="100%" width="100%" style="border-radius: 10px;"> 
+                <div class="detail" style="background-color: #000000a7; ">
+                  <h1 style="margin-top: -55px; margin-left: 10px;">ผู้ต้องสาป</h1>
+                  <p>คุณเริ่มเกมด้วยการอยู่ฝ่ายชาวบ้าน เมื่อมนุษย์หมาป่าเลือกกําจัดคุณ คุณจะไม่ตาย แต่จะกลายเป็นมนุษย์หมาป่าแทน</p>
+              
+                </div>
+              </div>
+              <!------------------------------------------------------------>
+
+              <div class="card" style="width: 290px;height: 380px; border-radius: 5px; background-color: #24628f00;">
+                <img class="img-rounded" src="IMAGE/card_cultist.png" alt="cupid" height="100%" width="100%" style="border-radius: 10px;"> 
+                <div class="detail" style="background-color: #000000a7; ">
+                  <h1 style="margin-top: -55px; margin-left: 10px;">เจ้าลัทธิ</h1>
+                  <p>ในแต่ละคืน เลือกผู้เล่นหนึ่งคนให้เข้าร่วมลัทธิของตน
+                    คุณจะชนะเมื่อผู้เล่นทั้งหมดอยู่ในลัทธิ</p>
+              
+                </div>
+              </div>
+              <!------------------------------------------------------------>
+
+              <div class="card" style="width: 290px;height: 380px; border-radius: 5px; background-color: #24628f00;">
+                <img class="img-rounded" src="IMAGE/card_thug.png" alt="cupid" height="100%" width="100%" style="border-radius: 10px;"> 
+                <div class="detail" style="background-color: #000000a7; ">
+                  <h1 style="margin-top: -55px; margin-left: 10px;">อันธพาล</h1>
+                  <p>ในคืนแรก ให้เลือกผู้เล่น 2 คน คุณจะชนะเกม ก็ต่อเมื่อคุณยังอยู่ในเกมจนจบเกม และผู้เล่น 2 คนนี้ถูกกําจัดไปแล้ว</p>
+              
+                </div>
+              </div>
+              <!------------------------------------------------------------>
+
+              <div class="card" style="width: 290px;height: 380px; border-radius: 5px; background-color: #24628f00;">
+                <img class="img-rounded" src="IMAGE/card_vampire.png" alt="cupid" height="100%" width="100%" style="border-radius: 10px;"> 
+                <div class="detail" style="background-color: #000000a7; ">
+                  <h1 style="margin-top: -55px; margin-left: 10px;">แวมไพร์</h1>
+                  <p>ในแต่ละคืน เลือกผู้เล่นหนึ่งคน ผู้เล่นนั้นจะถูกกําจัด
+                    เมื่อเริ่มการโหวตกําจัดผู้เล่นในวันถัดไป</p>
+              
+                </div>
+              </div>
+            </div>
+            <div id="rule" style="font-size: 30px; margin-top: 80px;margin-left: 80px ;text-decoration: none;color: white; background-color: #000000cf;border-radius: 3px;text-align: center;max-width: 250px;max-height: 80px;padding: 20px 40px;">
+              <h4 >ตัวละครพิเศษ</h4>
+            </div>
+
+            <div class=" container-fluid" id="rolecard">
+              <div class="card" style="width: 290px;height: 380px; border-radius: 5px; background-color: #24628f00;">
+                <img class="img-rounded" src="IMAGE/card_showedup_man.png" alt="cupid" height="100%" width="100%" style="border-radius: 10px;"> 
+                <div class="detail" style="background-color: #000000a7; ">
+                  <h1 style="margin-top: -55px; margin-left: 10px;">ผู้เผยตัวตน</h1>
+                  <p>ในแต่ละคืนสามารถเลือกชี้ผู้เล่นหนึ่งคน หากผู้เล่นนั้นเป็นมนุษย์หมาป่า ผู้เล่นนั้นจะถูกกําจัดทันที แต่ถ้าไม่ใช่ คุณจะถูกกําจัดแทน</p>
+              
+                </div>
+              </div>
+              <!------------------------------------------------------------>
+              <div class="card" style="width: 290px;height: 380px; border-radius: 5px; background-color: #24628f00;">
+                <img class="img-rounded" src="IMAGE/card_hypnotizer.png" alt="cupid" height="100%" width="100%" style="border-radius: 10px;"> 
+                <div class="detail" style="background-color: #000000a7; ">
+                  <h1 style="margin-top: -55px; margin-left: 10px;">นักสะกดจิต</h1>
+                  <p>ในแต่ละคืนสามารถชี้ไปที่ผู้เล่นสองคน
+                    เพื่อตรวจสอบว่าสองคนนั้นอยู่ฝ่ายเดียวกันหรือไม่</p>
+              
+                </div>
+              </div>
+              <!------------------------------------------------------------>
+              <div class="card" style="width: 290px;height: 380px; border-radius: 5px; background-color: #24628f00;">
+                <img class="img-rounded" src="IMAGE/card_huntswoman.png" alt="cupid" height="100%" width="100%" style="border-radius: 10px;"> 
+                <div class="detail" style="background-color: #000000a7; ">
+                  <h1 style="margin-top: -55px; margin-left: 10px;">พรานหญิง</h1>
+                  <p>สามารถกําจัดผู้เล่นได้หนึ่งคนในช่วงกลางคืน ใช้ได้ครั้งเดียวในเกม</p>
+              
+                </div>
+              </div>
+              <!------------------------------------------------------------>
+              <div class="card" style="width: 290px;height: 380px; border-radius: 5px; background-color: #24628f00;">
+                <img class="img-rounded" src="IMAGE/card_suicide_bomber.png" alt="cupid" height="100%" width="100%" style="border-radius: 10px;"> 
+                <div class="detail" style="background-color: #000000a7; ">
+                  <h1 style="margin-top: -55px; margin-left: 10px;">มือระเบิดพลีชีพ</h1>
+                  <p>หากถูกกําจัด ผู้เล่นที่อยู่ติดกับคุณ ทั้งซ้ายและขวาจะถูกกําจัดไปด้วย</p>
+              
+                </div>
+              </div>
+              <!------------------------------------------------------------>
+
+              <div class="card" style="width: 290px;height: 380px; border-radius: 5px; background-color: #24628f00;">
+                <img class="img-rounded" src="IMAGE/card_header_werewolf.png" alt="cupid" height="100%" width="100%" style="border-radius: 10px;"> 
+                <div class="detail" style="background-color: #000000a7; ">
+                  <h2 style="margin-top: -55px; margin-left: 10px;">มนุษย์หมาป่าจ่าฝูง</h2>
+                  <p>ในคืนหลังจากที่มีมนุษย์หมาป่าถูกกําจัดในตอนกลางวัน สามารถเลือกเปลี่ยนผู้เล่นที่ฝ่ายมนุษย์หมาป่าเลือกกําจัด ให้เป็นมนุษย์หมาป่าตัวใหม่ได้ แทนที่จะกําจัดตามปกติ
+                    ใช้ได้ครั้งเดียวในเกม</p>
+              
+                </div>
+              </div>
+              <!------------------------------------------------------------>
+
+              <div class="card" style="width: 290px;height: 380px; border-radius: 5px; background-color: #24628f00;">
+                <img class="img-rounded" src="IMAGE/card_enlighted_one.png" alt="cupid" height="100%" width="100%" style="border-radius: 10px;"> 
+                <div class="detail" style="background-color: #000000a7; ">
+                  <h1 style="margin-top: -55px; margin-left: 10px;">เทพผู้รู้แจ้ง</h1>
+                  <p>ในแต่ละคนเลือกชี้ผู้เล่นหนึ่งคน เพื่อตรวจสอบว่าเป็นบทบาทใด</p>
+              
+                </div>
+              </div>
+              <!------------------------------------------------------------>
+
+            </div>
+          </div>
+                  
+
+          </div>
+
+          
+        </div>
+          <!------------------------FOOTER---------------------------->
+              
+        
+        <footer class=" p-4 bg-dark text-white">
+          <h1>สมาชิก</h1>
+          <div>
+            <p>1.ชนม์นิภา คำนูณวัฒน์ 660710701</p>
+            <p>2.ธีมาพร เรืองศรี 660710761</p>
+            <p>3.ศรีโสภณ คุ้มผล 660710254</p>
+            <p>4.ฑิฆัมพร มีดี 660710243</p>
+            <p>5.พีรพัชร คล้ายสำเนียง 660710729</p>
+          </div>
+          
+        </footer>
+        
+          
+            
+    </body>
+
+
+    <script>
+      x=true
+      function myFunction(x) {
+        x.classList.toggle("change");
+      }
+      function openNav() {
+        if(x==true){
+          document.getElementById("mySidenav").style.width = "250px";
+          document.getElementById("main").style.marginRight = "250px";
+          document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+          document.getElementById("myCanvasNav").style.opacity = "0.8"; 
+          document.getElementById("myCanvasNav").style.width = "100%"; 
+          x=false
+        }else{
+          document.getElementById("mySidenav").style.width = "0";
+          document.getElementById("main").style.marginRight= "0";
+          document.getElementById("myCanvasNav").style.opacity = "0"; 
+          document.getElementById("myCanvasNav").style.width = "0%"; 
+          document.body.style.backgroundColor = "white";
+          x=true
+        }
+          
+      }
+
+  
+      </script>
+</html>

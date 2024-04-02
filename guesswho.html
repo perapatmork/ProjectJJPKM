@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="th">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <title>Main</title><!-- TITLE OF WEB-->
+    </head>
+    <body>
+      
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+        <div id="mySidenav" class="sidenav navbarText" style="width: 0;">
+          <a  class="nav-link " href="werewolf.html">WEREWOLF</a> <!--อย่าลืมใส่ ACtive ให้เว็บตัวเอง--> 
+          <a class="nav-link active" href="guesswho.html">GUESS WHO?</a>
+          <a class="nav-link" href="spyfall.html">SPYFALL</a>
+          <a class="nav-link" href="uno.html">UNO</a>
+          <a class="nav-link" href="avalon.html">AVALON</a>
+          <a class="nav-link" href="monopoly.html">MONOPOLY</a>
+          </div>
+        <!-----------------------NAV------------------------>
+        <nav class="navbar navbar-expand-sm navbar-light fixed-top" id="navi">
+            <div class="container-fluid">
+              <a class="navbar-brand" >Guess Who?</a>
+            </div>
+            
+            <div class="collapse navbar-collapse navbarText">
+                
+                <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a href="index.html" id="home" class="nav-link"><i class="fa fa-home fa-fw" style="font-size:25px;"></i></a>
+                  </li>
+                </ul>
+                <div class="container" onclick="myFunction(this),openNav(true)" id="menu_container">
+                    <div class="bar1"></div>
+                    <div class="bar2"></div>
+                    <div class="bar3"></div>
+                  </div>
+              </div>
+          </nav>
+        
+        <div id="main">
+          <div id="myCanvasNav" class="overlay3" style="width: 0; opacity: 0;"></div>
+          <!-----------------------IMG------------------------>
+          <div class="jumbotron">
+              <img src="IMAGE/Guesswho.jpg" width="100%"><!--To FIX BANNER------------------------------------------------>
+          </div>
+
+          <!-----------------------ALLGAMES------------------------>
+          <div id="guesswho">
+              <h2>GUESS WHO?</h2>
+          </div>
+          <!-----------------------CONTENT------------------------>
+          <div id="Mainnamegame">
+                <h1><strong>Guess who?<strong</h1>
+                <body style="background-color: #cbe0ee;"></body>
+                <p id="font">บอร์ดเกม เกมส์หาคนปริศนาของเพื่อน เดาซิว่าฉันเป็นใคร <br>เป็นเกมแนวตัดตัวเลือกระหว่างผู้เล่น 2 คน สามารถตั้งคำถามเพื่อให้ตัวเลือกแคบลง และสามารถเลือกตัวละครที่มีความน่าจะเป็นไปได้</p>
+                  <div class="d-flex p-3">
+                    <img src="IMAGE/Guesswhogameplay.jpg" width="480px" height="480px">
+                    <div class="pd-5" style="padding-left: 50px;"><h1><strong><u><br>กติกาและวิธีการเล่น</u><strong></h1>
+                          <li id="font">ทั้งสองฝ่ายเลือกตัวละครมาคนละ 1 ตัว<br></li>
+                          <li id="font">เมื่อถึงตาของผู้เล่นให้ตั้งคำถามเช่น ผมสีดำหรือไม่<br></li>
+                          <li id="font">หากไม่ใช่ให้ทำการพับตัวลครที่มีสีผมดำลงเพื่อตัดตัวเลือกสลับกันถาม<br></li>
+                          <li id="font">1คำถาม ต่อ 1 ตาของผู้เล่น<br></li>
+                          <li id="font">ผู้ที่ทายถูกจะเป็นผู้ชนะ และ หากทายผิดจะแพ้ทันที</li></div>
+      
+                  </div>
+                <h1><strong><u><br>อุปกรณ์การเล่น</u><strong></h1>
+                    <li id="font">การ์ดตัวละคร<br></li>
+                    <li id="font">บอร์ดแผ่นพับการ์ดตัวละคร<br></li>
+                </div>
+                      <div class="col">
+                        <img src="IMAGE/Guess-Whochar.jpg" width="480px" height="480px">
+                        <img src="IMAGE/guesswhoboard.jpg" width="480px" height="480px">
+                      </div>
+                  </div>
+
+          <!------------------------FOOTER---------------------------->
+          <footer class=" p-4 bg-dark text-white">
+            <h1>สมาชิก</h1>
+            <div>
+              <p>1.ชนม์นิภา คำนูณวัฒน์ 660710701</p>
+              <p>2.ธีมาพร เรืองศรี 660710761</p>
+              <p>3.ศรีโสภณ คุ้มผล 660710254</p>
+              <p>4.ฑิฆัมพร มีดี 660710243</p>
+              <p>5.พีรพัชร คล้ายสำเนียง 660710729</p>
+            </div>
+            
+          </footer>
+        </div>
+          
+            
+    </body>
+
+
+    <script>
+      x=true
+      function myFunction(x) {
+        x.classList.toggle("change");
+      }
+      function openNav() {
+        if(x==true){
+          document.getElementById("mySidenav").style.width = "250px";
+          document.getElementById("main").style.marginRight = "250px";
+          document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+          document.getElementById("myCanvasNav").style.opacity = "0.8"; 
+          document.getElementById("myCanvasNav").style.width = "100%"; 
+          x=false
+        }else{
+          document.getElementById("mySidenav").style.width = "0";
+          document.getElementById("main").style.marginRight= "0";
+          document.getElementById("myCanvasNav").style.opacity = "0"; 
+          document.getElementById("myCanvasNav").style.width = "0%"; 
+          document.body.style.backgroundColor = "white";
+          x=true
+        }
+          
+      }
+
+  
+      </script>
+</html>
